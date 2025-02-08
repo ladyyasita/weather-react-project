@@ -12,7 +12,8 @@ root.render(
     <footer>
       This project was coded by{" "}
       <a href="/" target="_blank" rel="noopener noreferrer">
-        Iaroslava Pozniak
+        {" "}
+        Iaroslava Pozniak{" "}
       </a>{" "}
       and is{" "}
       <a
@@ -24,7 +25,8 @@ root.render(
       </a>{" "}
       and{" "}
       <a href="" target="_blank" rel="noopener noreferrer">
-        hosted on Netlify
+        {" "}
+        hosted on Netlify{" "}
       </a>
     </footer>
   </StrictMode>
