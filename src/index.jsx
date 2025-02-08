@@ -12,7 +12,8 @@ root.render(
     <footer>
       This project was coded by{" "}
       <a href="/" target="_blank" rel="noopener noreferrer">
-        Iaroslava Pozniak
+        {" "}
+        Iaroslava Pozniak{" "}
       </a>{" "}
       and is{" "}
       <a
@@ -20,11 +21,13 @@ root.render(
         target="_blank"
         rel="noopener noreferrer"
       >
-        open-sourced on GitHub
+        {" "}
+        open-sourced on GitHub{" "}
       </a>{" "}
       and{" "}
       <a href="" target="_blank" rel="noopener noreferrer">
-        hosted on Netlify
+        {" "}
+        hosted on Netlify{" "}
       </a>
       .
     </footer>
