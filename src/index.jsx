@@ -25,6 +25,7 @@ root.render(
         target="_blank"
         rel="noopener noreferrer"
       >
+        {" "}
         open-sourced on GitHub
       </a>
       and
