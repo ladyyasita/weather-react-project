@@ -28,9 +28,9 @@ root.render(
         {" "}
         open-sourced on GitHub
       </a>
-      and
-      <a href="" target="_blank" rel="noopener noreferrer">
-        hosted on Netlify
+       and 
+       <a href="" target="_blank" rel="noopener noreferrer">
+         hosted on Netlify
       </a>
     </footer>
   </StrictMode>
