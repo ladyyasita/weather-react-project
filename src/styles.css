@@ -5,3 +5,6 @@
 li {
   display: block;
 }
+footer a {
+  margin: 0 5px;
+}
