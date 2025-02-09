@@ -14,18 +14,16 @@ root.render(
       <a href="/" target="_blank" rel="noopener noreferrer">
         Iaroslava Pozniak
       </a>{" "}
-      and is
+      and is{" "}
       <a
         href="https://github.com/ladyyasita/weather-react-project"
         target="_blank"
         rel="noopener noreferrer"
       >
-        {" "}
         open-sourced on GitHub
       </a>{" "}
-      and
+      and{" "}
       <a href="" target="_blank" rel="noopener noreferrer">
-        {" "}
         hosted on Netlify
       </a>
       .
