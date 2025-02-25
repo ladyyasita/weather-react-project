@@ -13,6 +13,7 @@ export default function Weather() {
       humidity: response.data.main,
       date: new Date(response.data.dt *1000),
       description: response.data.weather[0].description,
+      icon:response.description.data.weather[0],
       wind: response.data.wind.sped,
       city: response.data.name
     });
