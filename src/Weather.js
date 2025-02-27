@@ -3,19 +3,19 @@ import WeathInfo from "./WeatherInfo";
 import Weather from "./Weather.css";
 import axios from "axios";
 
-export default function Weather() {
-  let [weatherData, setWeatherDataTemperature] = useState({ready:false});
+export default function Weather(props) {
+  let [weatherData, setWeatherData] = useState({ ready: false });
   let [city, setCity] = useState(props.defaultCity);
   function handleResponse(response) {
     setweatherData({
-      ready:true,
+      ready: true,
       temperature: response.data.main.temp,
       humidity: response.data.main,
-      date: new Date(response.data.dt *1000),
+      date: new Date(response.data.dt * 1000),
       description: response.data.weather[0].description,
-      icon:response.description.data.weather[0],
+      icon: response.description.data.weather[0],
       wind: response.data.wind.sped,
-      city: response.data.name
+      city: response.data.name,
     });
   }
   function search() {
@@ -23,19 +23,17 @@ export default function Weather() {
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleResponse);
   }
-function handleSubmit(event){
-  event.preventDefault();
-search(city);  
-}
-function handleCityChange(event){
-
-setCity(event.target.value);
-
-}
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
   if (weatherData.ready) {
     return (
       <div className="Weather">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="row">
             <div className="col-9">
               <input
@@ -47,16 +45,19 @@ setCity(event.target.value);
               />
             </div>
             <div className="col-3">
-              <input type="submit" value="Search" className="btn btn-primary" />
+              <input
+                type="submit"
+                value="Search"
+                className="btn btn-primary w-100"
+              />
             </div>
           </div>
         </form>
-        <WeathInfo/>
-       
+        <WeathInfo data={weatherData} />
       </div>
     );
-  } else     {
+  } else {
     search();
     return "Loading...";
-}
+  }
 }

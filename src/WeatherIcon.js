@@ -1,6 +1,7 @@
 import React from "react";
 
 
+
 export default function WeatherIcon(props){
     let codeMapping = {
       "01d": "CLEAR_DAY",

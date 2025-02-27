@@ -1,38 +1,30 @@
 import React from "react";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
+import WeatherTemperature from "./WeatherTemperature";
 
-
-export default function WeathInfo(props){
-    return (
-      <div className="WeatherInfo">
-        <h1>{props.data.city}</h1>
-        <ul>
-          <li>
-            <FormattedDate info={props.data.date} />
-          </li>
-          <li className="text-capitalize">{props.data.description}</li>
-          <li></li>
-        </ul>
-        <div className="row mt-3">
-          <div className="col-6">
-            <div className="clearfix">
-              <div className="float-left">
-                <WeathIcon
-                  code={props.data.icon}
-                  alt={props.daata.description}
-                />
-              </div>
-              <img
-                src={weatherData.iconUrl}
-                alt={weatherData.description}
-                className="float-left"
+export default function WeathInfo(props) {
+  return (
+    <div className="WeatherInfo">
+      <h1>{props.data.city}</h1>
+      <ul>
+        <li>
+          <FormattedDate info={props.data.date} />
+        </li>
+        <li className="text-capitalize">{props.data.description}</li>
+      </ul>
+      <div className="row mt-3">
+        <div className="col-6">
+          <div className="d-flex">
+            <div>
+              <WeatherIcon
+                code={props.data.icon}
+                alt={props.daata.description}
               />
-              <div className="float-left">
-                {" "}
-                <span className="temp">{Math.round(temperature)}</span>
-              </div>
-              <span className="unit text-capitalize">°C</span>
+            </div>
+
+            <div>
+              <WeatherTemperature celsius={props.data.temperature} />
             </div>
           </div>
         </div>
@@ -43,5 +35,6 @@ export default function WeathInfo(props){
           </ul>
         </div>
       </div>
-    );
+    </div>
+  );
 }
