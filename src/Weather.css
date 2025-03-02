@@ -1,12 +1,13 @@
 body {
-  background-color: #a9d6f6;
+  background-color: #9e6897;
 }
 
 .Weather {
-  border: 3px solid #243e51;
+  border: 3px solid #142939;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   padding: 16px;
   border-radius: 5px;
+  background-color: rgb(166, 235, 248);
   color: rgb(39, 21, 75);
 }
 .Weather h1 {
@@ -30,6 +31,18 @@ body {
   margin: 10px auto;
   position: relative;
 }
+.Weather form {
+  margin: 10px 10px;
+}
+.btn {
+  color: #142939;
+}
+.form-control {
+  background-color: #47b0dd;
+  border: 3px solid #142939;
+  border-radius: 6px;
+}
+
 .Weather .temp {
   font-weight: bold;
   color: rgb(76, 41, 87);
