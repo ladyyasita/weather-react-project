@@ -7,7 +7,6 @@ export default function App() {
     <div className="App">
       <div className="container">
         <Weather defaultCity="Prague" />
-        Weather App
         <footer>
           This project was coded by{" "}
           <a href="/" target="_blank" rel="noopener noreferrer">
