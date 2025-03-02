@@ -1,9 +1,9 @@
-.App{
-      max-width: 600px;
-      display: flex;
-      justify-content: center;
+.App {
+  max-width: 600px;
+  display: flex;
+  margin: 40px auto;
 }
-.App footer{
-    font-size: 16px;
-    margin: auto;
+.App footer {
+  font-size: 16px;
+  margin: auto;
 }
