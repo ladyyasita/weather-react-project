@@ -5,7 +5,6 @@ import axios from "axios";
 import WeatherForecast from "./WeatherForecast";
 
 export default function Weather(props) {
-  
   let [weatherData, setWeatherData] = useState({ ready: false });
   let [city, setCity] = useState(props.defaultCity);
   function handleResponse(response) {
@@ -22,17 +21,18 @@ export default function Weather(props) {
       city: response.data.name,
     });
   }
-  function search() {
-    let apiKey = "0f71ee8d72f86e287ce25cc07ef39c0e";
-    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
-  }
+
   function handleSubmit(event) {
     event.preventDefault();
     search();
   }
   function handleCityChange(event) {
     setCity(event.target.value);
+  }
+  function search() {
+    let apiKey = "64e368fe6f6597398ea3611b80f6c451";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
   }
   if (weatherData.ready) {
     return (
@@ -44,17 +44,21 @@ export default function Weather(props) {
                 type="search"
                 placeholder="Enter a city..."
                 className="form-control"
-                autofocus="on"
+                autoFocus="on"
                 onChange={handleCityChange}
               />
             </div>
             <div className="col-3">
-              <input type="submit" value="Search" className="btn btn-info w-100" />
+              <input
+                type="submit"
+                value="Search"
+                className="btn btn-info w-100"
+              />
             </div>
           </div>
         </form>
         <WeathInfo data={weatherData} />
-      <WeatherForecast coord={weatherData.coordinates} />
+        <WeatherForecast coord={weatherData.coordinates} />
       </div>
     );
   } else {
