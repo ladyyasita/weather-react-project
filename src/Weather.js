@@ -11,7 +11,7 @@ export default function Weather(props) {
   function handleResponse(response) {
     setWeatherData({
       ready: true,
-      date: new Date(response.data.dt * 1000),
+      date: new Date(response.data.time * 1000),
       temperature: Math.round(response.data.temperature.current),
       wind: Math.round(response.data.wind.speed),
       humidity: response.data.temperature.humidity,
