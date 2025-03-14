@@ -4,6 +4,8 @@ import WeatherIcon from "./WeatherIcon";
 import WeatherTemperature from "./WeatherTemperature";
 
 export default function WeatherInfo(props) {
+  console.log("Weather Icon Code:", props.data.icon); // Debugging line
+
   return (
     <div className="WeatherInfo">
       <h1>{props.data.city}</h1>
@@ -15,9 +17,9 @@ export default function WeatherInfo(props) {
       </ul>
       <div className="row mt-3">
         <div className="col-6">
-          <div className="d-flex">
+          <div className="d-flex align-items-center">
             <div>
-              <WeatherIcon code={props.data.icon} size={52} />
+              <WeatherIcon code={props.data.icon || "01d"} size={52} />
             </div>
 
             <div>
