@@ -9,22 +9,22 @@ export default function WeatherForecast(props) {
 
   useEffect(() => {
     setLoaded(false);
-  }, [props.coordinates]);
+  }, [props.city]);
 
   function handleResponse(response) {
     setForecast(response.data.daily);
     setLoaded(true);
   }
   function load() {
-    if (props.coordinates) {
-      let latitude = props.coordinates.lat;
-      let longitude = props.coordinates.lon;
-      let apiKey = "6e6ec494746b5229a9f2d526478c924c";
-      let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
-      axios.get(apiUrl).then(handleResponse);
-    }
-    return null;
-  }
+    if (loaded) {
+    let apiKey = "c3a451d0adt46fobb2b9a77755f49315";
+    let latitude = props.coordinates.latitude;
+    let longitude = props.coordinates.longitude;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${latitude}&lon=${longitude}&key=${apiKey}&units=metrics`;
+
+    axios.get(apiUrl).then(handleResponse);
+  } return null;}
+
   if (loaded) {
     return (
       <div className="WeatherForecast">
