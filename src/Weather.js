@@ -9,6 +9,7 @@ export default function Weather(props) {
   let [city, setCity] = useState(props.defaultCity);
 
   function handleResponse(response) {
+    console.log(response.data);
     setWeatherData({
       ready: true,
       date: new Date(response.data.time * 1000),
@@ -19,6 +20,7 @@ export default function Weather(props) {
       icon: response.data.condition.icon,
       city: response.data.city,
       coordinates: response.data.coordinates,
+      realfeel: Math.round(response.data.temperature.feels_like),
     });
   }
 
@@ -49,11 +51,7 @@ export default function Weather(props) {
               />
             </div>
             <div className="col-3">
-              <input
-                type="submit"
-                value="Search"
-                className="btn btn-info w-100"
-              />
+              <input type="submit" value="🔍" className="btn btn-info w-100" />
             </div>
           </div>
         </form>

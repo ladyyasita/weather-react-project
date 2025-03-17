@@ -7,8 +7,8 @@ body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   padding: 16px;
   border-radius: 5px;
-  background-color: rgb(166, 235, 248);
-  color: rgb(39, 21, 75);
+  background: linear-gradient(#b0e0eb, #17569f);
+  color: rgb(23, 5, 43);
 }
 .Weather h1 {
   font-size: 24px;
@@ -16,7 +16,12 @@ body {
   margin: 20px 0 0 0;
   line-height: 30px;
 }
-
+.realFeel {
+  font-style: italic;
+  font-size: 20px;
+  color: #190f13;
+  margin-top: 9px;
+}
 .Weather ul {
   margin: 0;
   padding: 0;
@@ -57,4 +62,11 @@ body {
   font-weight: 400;
   position: relative;
   top: -29px;
+}
+footer {
+  text-align: center;
+  color: #3a051a;
+}
+footer a{
+  color: #b7d5e3;
 }
